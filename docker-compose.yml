@@ -1,0 +1,30 @@
+version: '3'
+services:
+ mysql:
+  image: mysql:8
+  environment:
+   MYSQL_DATABASE: 'wqbase'
+   MYSQL_USER: 'wqpuser'
+   MYSQL_PASSWORD: 'waterquality101'
+   MYSQL_ROOT_PASSWORD: 'wqproot'
+  ports:
+   - "3306:3306"
+  volumes:
+   - mysql_volume:/var/lib/mysql
+ adminer:
+  image: adminer:latest
+  labels:
+   - "traefik.enable=true"
+   - "traefik.http.routers.adminer.rule=Host('wqbase.marshall.edu')"
+   - "traefik.http.routers.adminer.tls=true"
+   - "traefik.http.routers.adminer.entrypoints=web"
+   - "traefik.http.routers.adminer.entrypoints=websecure" 
+   - "traefik.port=8080"
+  depends_on:
+   - mysql
+volumes:
+ mysql_volume:
+networks:
+  default:
+    external: 
+      name: proxy_wqbase-net
