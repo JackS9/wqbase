@@ -20,8 +20,8 @@
       "port": 3306,
       "askForPassword": true,
       "driver": "MariaDB",
-      "username": "django",
-      "database": "django",
+      "username": "wqpuser",
+      "database": "wqbase",
       "name": "Container database"
     }],
 		"python.pythonPath": "/usr/local/bin/python",
