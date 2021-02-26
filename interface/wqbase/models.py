@@ -1,0 +1,121 @@
+from django.db import models
+
+# Create your models here.
+
+class Results(models.Model):
+    created = models.DateTimeField(blank=True, null=True)
+    created_by = models.PositiveIntegerField(blank=True, null=True)
+    state = models.IntegerField()
+    organizationidentifier = models.CharField(db_column='OrganizationIdentifier', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    organizationformalname = models.CharField(db_column='OrganizationFormalName', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    activityidentifier = models.CharField(db_column='ActivityIdentifier', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    activitytypecode = models.CharField(db_column='ActivityTypeCode', max_length=25, blank=True, null=True)  # Field name made lowercase.
+    activitymedianame = models.CharField(db_column='ActivityMediaName', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    activitymediasubdivisionname = models.CharField(db_column='ActivityMediaSubdivisionName', max_length=45, blank=True, null=True)  # Field name made lowercase.
+    activitystartdate = models.DateField(db_column='ActivityStartDate', blank=True, null=True)  # Field name made lowercase.
+    activitystarttime_time = models.TimeField(db_column='ActivityStartTime/Time', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    activitystarttime_timezonecode = models.CharField(db_column='ActivityStartTime/TimeZoneCode', max_length=45, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    activityenddate = models.DateField(db_column='ActivityEndDate', blank=True, null=True)  # Field name made lowercase.
+    activityendtime_time = models.TimeField(db_column='ActivityEndTime/Time', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    activityendtime_timezonecode = models.CharField(db_column='ActivityEndTime/TimeZoneCode', max_length=255, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    activitydepthheightmeasure_measurevalue = models.FloatField(db_column='ActivityDepthHeightMeasure/MeasureValue', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    activitydepthheightmeasure_measureunitcode = models.CharField(db_column='ActivityDepthHeightMeasure/MeasureUnitCode', max_length=255, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    activitydepthaltitudereferencepointtext = models.CharField(db_column='ActivityDepthAltitudeReferencePointText', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    activitytopdepthheightmeasure_measurevalue = models.FloatField(db_column='ActivityTopDepthHeightMeasure/MeasureValue', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    activitytopdepthheightmeasure_measureunitcode = models.CharField(db_column='ActivityTopDepthHeightMeasure/MeasureUnitCode', max_length=255, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    activitybottomdepthheightmeasure_measurevalue = models.FloatField(db_column='ActivityBottomDepthHeightMeasure/MeasureValue', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    activitybottomdepthheightmeasure_measureunitcode = models.CharField(db_column='ActivityBottomDepthHeightMeasure/MeasureUnitCode', max_length=255, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    projectidentifier = models.CharField(db_column='ProjectIdentifier', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    activityconductingorganizationtext = models.CharField(db_column='ActivityConductingOrganizationText', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    monitoringlocationidentifier = models.CharField(db_column='MonitoringLocationIdentifier', max_length=45, blank=True, null=True)  # Field name made lowercase.
+    activitycommenttext = models.CharField(db_column='ActivityCommentText', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    sampleaquifer = models.CharField(db_column='SampleAquifer', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    hydrologiccondition = models.CharField(db_column='HydrologicCondition', max_length=25, blank=True, null=True)  # Field name made lowercase.
+    hydrologicevent = models.CharField(db_column='HydrologicEvent', max_length=25, blank=True, null=True)  # Field name made lowercase.
+    samplecollectionmethod_methodidentifier = models.CharField(db_column='SampleCollectionMethod/MethodIdentifier', max_length=12, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    samplecollectionmethod_methodidentifiercontext = models.CharField(db_column='SampleCollectionMethod/MethodIdentifierContext', max_length=45, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    samplecollectionmethod_methodname = models.CharField(db_column='SampleCollectionMethod/MethodName', max_length=255, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    samplecollectionequipmentname = models.CharField(db_column='SampleCollectionEquipmentName', max_length=45, blank=True, null=True)  # Field name made lowercase.
+    resultdetectionconditiontext = models.CharField(db_column='ResultDetectionConditionText', max_length=45, blank=True, null=True)  # Field name made lowercase.
+    characteristicname = models.CharField(db_column='CharacteristicName', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    resultsamplefractiontext = models.CharField(db_column='ResultSampleFractionText', max_length=45, blank=True, null=True)  # Field name made lowercase.
+    resultmeasurevalue = models.FloatField(db_column='ResultMeasureValue', blank=True, null=True)  # Field name made lowercase.
+    resultmeasure_measureunitcode = models.CharField(db_column='ResultMeasure/MeasureUnitCode', max_length=12, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    measurequalifiercode = models.CharField(db_column='MeasureQualifierCode', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    resultstatusidentifier = models.CharField(db_column='ResultStatusIdentifier', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    statisticalbasecode = models.CharField(db_column='StatisticalBaseCode', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    resultvaluetypename = models.CharField(db_column='ResultValueTypeName', max_length=25, blank=True, null=True)  # Field name made lowercase.
+    resultweightbasistext = models.CharField(db_column='ResultWeightBasisText', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    resulttimebasistext = models.CharField(db_column='ResultTimeBasisText', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    resulttemperaturebasistext = models.CharField(db_column='ResultTemperatureBasisText', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    resultparticlesizebasistext = models.CharField(db_column='ResultParticleSizeBasisText', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    precisionvalue = models.IntegerField(db_column='PrecisionValue')  # Field name made lowercase.
+    resultcommenttext = models.CharField(db_column='ResultCommentText', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    usgspcode = models.CharField(db_column='USGSPCode', max_length=5, blank=True, null=True)  # Field name made lowercase.
+    resultdepthheightmeasure_measurevalue = models.FloatField(db_column='ResultDepthHeightMeasure/MeasureValue', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    resultdepthheightmeasure_measureunitcode = models.CharField(db_column='ResultDepthHeightMeasure/MeasureUnitCode', max_length=255, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    resultdepthaltitudereferencepointtext = models.CharField(db_column='ResultDepthAltitudeReferencePointText', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    subjecttaxonomicname = models.CharField(db_column='SubjectTaxonomicName', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    sampletissueanatomyname = models.CharField(db_column='SampleTissueAnatomyName', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    resultanalyticalmethod_methodidentifier = models.CharField(db_column='ResultAnalyticalMethod/MethodIdentifier', max_length=25, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    resultanalyticalmethod_methodidentifiercontext = models.CharField(db_column='ResultAnalyticalMethod/MethodIdentifierContext', max_length=12, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    resultanalyticalmethod_methodname = models.CharField(db_column='ResultAnalyticalMethod/MethodName', max_length=255, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    methoddescriptiontext = models.CharField(db_column='MethodDescriptionText', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    laboratoryname = models.CharField(db_column='LaboratoryName', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    analysisstartdate = models.DateField(db_column='AnalysisStartDate', blank=True, null=True)  # Field name made lowercase.
+    resultlaboratorycommenttext = models.CharField(db_column='ResultLaboratoryCommentText', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    detectionquantitationlimittypename = models.CharField(db_column='DetectionQuantitationLimitTypeName', max_length=45, blank=True, null=True)  # Field name made lowercase.
+    detectionquantitationlimitmeasure_measurevalue = models.FloatField(db_column='DetectionQuantitationLimitMeasure/MeasureValue', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    detectionquantitationlimitmeasure_measureunitcode = models.CharField(db_column='DetectionQuantitationLimitMeasure/MeasureUnitCode', max_length=12, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    preparationstartdate = models.DateField(db_column='PreparationStartDate', blank=True, null=True)  # Field name made lowercase.
+    providername = models.CharField(db_column='ProviderName', max_length=12, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = True
+        db_table = 'results'
+
+
+class Stations(models.Model):
+    created = models.DateTimeField(blank=True, null=True)
+    created_by = models.PositiveIntegerField(blank=True, null=True)
+    state = models.IntegerField()
+    organizationidentifier = models.CharField(db_column='OrganizationIdentifier', max_length=12)  # Field name made lowercase.
+    organizationformalname = models.CharField(db_column='OrganizationFormalName', max_length=255)  # Field name made lowercase.
+    monitoringlocationidentifier = models.CharField(db_column='MonitoringLocationIdentifier', unique=True, max_length=45)  # Field name made lowercase.
+    monitoringlocationname = models.CharField(db_column='MonitoringLocationName', max_length=255)  # Field name made lowercase.
+    monitoringlocationtypename = models.CharField(db_column='MonitoringLocationTypeName', max_length=45)  # Field name made lowercase.
+    monitoringlocationdescriptiontext = models.CharField(db_column='MonitoringLocationDescriptionText', max_length=255)  # Field name made lowercase.
+    huceightdigitcode = models.CharField(db_column='HUCEightDigitCode', max_length=12)  # Field name made lowercase.
+    drainageareameasure_measurevalue = models.FloatField(db_column='DrainageAreaMeasure/MeasureValue')  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    drainageareameasure_measureunitcode = models.CharField(db_column='DrainageAreaMeasure/MeasureUnitCode', max_length=12, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    contributingdrainageareameasure_measurevalue = models.FloatField(db_column='ContributingDrainageAreaMeasure/MeasureValue', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    contributingdrainageareameasure_measureunitcode = models.CharField(db_column='ContributingDrainageAreaMeasure/MeasureUnitCode', max_length=12, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    latitudemeasure = models.FloatField(db_column='LatitudeMeasure', blank=True, null=True)  # Field name made lowercase.
+    longitudemeasure = models.FloatField(db_column='LongitudeMeasure', blank=True, null=True)  # Field name made lowercase.
+    sourcemapscalenumeric = models.FloatField(db_column='SourceMapScaleNumeric', blank=True, null=True)  # Field name made lowercase.
+    horizontalaccuracymeasure_measurevalue = models.FloatField(db_column='HorizontalAccuracyMeasure/MeasureValue', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    horizontalaccuracymeasure_measureunitcode = models.CharField(db_column='HorizontalAccuracyMeasure/MeasureUnitCode', max_length=12, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    horizontalcollectionmethodname = models.CharField(db_column='HorizontalCollectionMethodName', max_length=45, blank=True, null=True)  # Field name made lowercase.
+    horizontalcoordinatereferencesystemdatumname = models.CharField(db_column='HorizontalCoordinateReferenceSystemDatumName', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    verticalmeasure_measurevalue = models.FloatField(db_column='VerticalMeasure/MeasureValue', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    verticalmeasure_measureunitcode = models.CharField(db_column='VerticalMeasure/MeasureUnitCode', max_length=12, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    verticalaccuracymeasure_measurevalue = models.FloatField(db_column='VerticalAccuracyMeasure/MeasureValue', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    verticalaccuracymeasure_measureunitcode = models.CharField(db_column='VerticalAccuracyMeasure/MeasureUnitCode', max_length=12, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    verticalcollectionmethodname = models.CharField(db_column='VerticalCollectionMethodName', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    verticalcoordinatereferencesystemdatumname = models.CharField(db_column='VerticalCoordinateReferenceSystemDatumName', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    countrycode = models.CharField(db_column='CountryCode', max_length=5, blank=True, null=True)  # Field name made lowercase.
+    statecode = models.CharField(db_column='StateCode', max_length=5, blank=True, null=True)  # Field name made lowercase.
+    countycode = models.CharField(db_column='CountyCode', max_length=5, blank=True, null=True)  # Field name made lowercase.
+    aquifername = models.CharField(db_column='AquiferName', max_length=25, blank=True, null=True)  # Field name made lowercase.
+    formationtypetext = models.CharField(db_column='FormationTypeText', max_length=25, blank=True, null=True)  # Field name made lowercase.
+    aquifertypename = models.CharField(db_column='AquiferTypeName', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    constructiondatetext = models.CharField(db_column='ConstructionDateText', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    welldepthmeasure_measurevalue = models.FloatField(db_column='WellDepthMeasure/MeasureValue', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    welldepthmeasure_measureunitcode = models.CharField(db_column='WellDepthMeasure/MeasureUnitCode', max_length=12, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    wellholedepthmeasure_measurevalue = models.FloatField(db_column='WellHoleDepthMeasure/MeasureValue', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    wellholedepthmeasure_measureunitcode = models.CharField(db_column='WellHoleDepthMeasure/MeasureUnitCode', max_length=12, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    providername = models.CharField(db_column='ProviderName', max_length=12, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = True
+        db_table = 'stations'
