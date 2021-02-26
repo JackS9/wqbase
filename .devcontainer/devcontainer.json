@@ -35,6 +35,11 @@
 		"python.linting.mypyPath": "/usr/local/py-utils/bin/mypy",
 		"python.linting.pycodestylePath": "/usr/local/py-utils/bin/pycodestyle",
 		"python.linting.pydocstylePath": "/usr/local/py-utils/bin/pydocstyle",
+    "python.linting.pylintArgs": [
+      "--load-plugins=pylint_django",
+      "--django-settings-module=interface.settings",
+      "--disable=C0111"
+    ],
 		"python.linting.pylintPath": "/usr/local/py-utils/bin/pylint",
 		"python.testing.pytestPath": "/usr/local/py-utils/bin/pytest",
     "python.languageServer": "Pylance",
@@ -56,7 +61,7 @@
   //"initializeCommand": "mkdir -p secrets && touch secrets/sql-password.txt secrets/sql-user.txt",
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "pip install --user -r requirements.txt",
+	"postCreateCommand": "pip install --user -r requirements.txt && pip install --user pylint-django",
 
 	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode"
