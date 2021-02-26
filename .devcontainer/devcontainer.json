@@ -37,7 +37,8 @@
 		"python.linting.pydocstylePath": "/usr/local/py-utils/bin/pydocstyle",
 		"python.linting.pylintPath": "/usr/local/py-utils/bin/pylint",
 		"python.testing.pytestPath": "/usr/local/py-utils/bin/pytest",
-    "python.languageServer": "Pylance"
+    "python.languageServer": "Pylance",
+    "files.eol": "\n"
 	},
 
 	// Add the IDs of extensions you want installed when the container is created.
@@ -45,6 +46,7 @@
 		"ms-python.python",
 		"mtxr.sqltools",
     "eamodio.gitlens",
+    "medo64.render-crlf",
     "ms-python.vscode-pylance",
     "mtxr.sqltools-driver-mysql"
 	],
