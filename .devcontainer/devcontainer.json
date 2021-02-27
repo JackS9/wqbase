@@ -38,7 +38,7 @@
     "python.linting.pylintArgs": [
       "--load-plugins=pylint_django",
       "--django-settings-module=interface.settings",
-      "--disable=C0111"
+      "--disable=missing-docstring,missing-class-docstring"
     ],
 		"python.linting.pylintPath": "/usr/local/py-utils/bin/pylint",
 		"python.testing.pytestPath": "/usr/local/py-utils/bin/pytest",
