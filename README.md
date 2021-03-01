@@ -10,7 +10,7 @@ Create the the initial database:
 
     python manage.py migrate
     python manage.py makemigrations wqbase
-    python manage.py migrate
+    python manage.py migrate wqbase
 
 Add a superuser (admin)
 

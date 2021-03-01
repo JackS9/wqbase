@@ -10,7 +10,6 @@ class StationsViewSet(viewsets.ModelViewSet):
     queryset = Stations.objects.all()
     serializer_class = StationsSerializer
     permission_classes = [permissions.IsAuthenticated]
-
 class ResultsViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows Results to be viewed or edited.
