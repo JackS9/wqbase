@@ -1,9 +1,12 @@
 asgiref==3.3.1
 Django==3.1.6
-djangorestframework>=3.0
+djangorestframework==3.12.2
 djangorestframework-csv==2.1.0
 djangorestframework-xml==2.0.0
 pytz==2021.1
 sqlparse==0.4.1
-get-docker-secret<=2.0.0
-mysqlclient<=3.0.0
+get-docker-secret==1.0.1
+mysqlclient==2.0.3
+defusedxml==0.6.0
+unicodecsv==0.14.1
+six==1.15.0

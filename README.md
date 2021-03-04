@@ -22,7 +22,7 @@ Start Django's development server:
 
 Go to localhost:8000 and confirm that the Django server is running.
 
-To populate the Stations and Results tables in the database with sampe data, log in to Adminer at localhost:8080 the following credententials:
+To populate the Stations and Results tables in the database with sampe data, log in to Adminer at localhost:8080 using the following credententials:
 
     System:  MySQL
     Server:  db
@@ -30,7 +30,7 @@ To populate the Stations and Results tables in the database with sampe data, log
     Password:  waterquality101
     Database:  wqbase
 
-Use Import to upload and execute wqbbase_data.sql
+Use Import to upload and execute wqbase_data.sql
 
 Confirm that all is well by logging in to localhost:8080/admin/ using the credentials created above for superuser.
 
