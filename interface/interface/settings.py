@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'django_filters',
     'wqbase.apps.WqbaseConfig'
 ]
 
@@ -51,11 +52,13 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.BrowsableAPIRenderer',
         'rest_framework_csv.renderers.CSVRenderer',
         'rest_framework_xml.renderers.XMLRenderer',
-
     ),
     'DEFAULT_PARSER_CLASSES': [
         'rest_framework_csv.parsers.CSVParser',
         'rest_framework_xml.parsers.XMLParser',
+    ],
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend',
     ],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10
@@ -130,7 +133,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/New_York'
 
 USE_I18N = True
 
