@@ -1,27 +1,114 @@
-from django.contrib.auth.models import User, Group
 from rest_framework import serializers
 from .models import Stations, Results
-
-
-class UserSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = User
-        fields = ['url', 'username', 'email', 'groups']
-
-
-class GroupSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Group
-        fields = ['url', 'name']
-
 
 class StationsSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Stations
-        fields = ['organizationidentifier', 'organizationformalname', 'monitoringlocationidentifier', 'monitoringlocationname']
+        fields = [
+            'organizationidentifier', 
+            'organizationformalname', 
+            'monitoringlocationidentifier', 
+            'monitoringlocationname', 
+            'monitoringlocationtypename', 
+            'monitoringlocationdescriptiontext', 
+            'huceightdigitcode', 
+            'drainageareameasure_measurevalue', 
+            'drainageareameasure_measureunitcode', 
+            'contributingdrainageareameasure_measurevalue', 
+            'contributingdrainageareameasure_measureunitcode', 
+            'latitudemeasure', 
+            'longitudemeasure', 
+            'sourcemapscalenumeric', 
+            'horizontalaccuracymeasure_measurevalue', 
+            'horizontalaccuracymeasure_measureunitcode', 
+            'horizontalcollectionmethodname', 
+            'horizontalcoordinatereferencesystemdatumname', 
+            'verticalmeasure_measurevalue', 
+            'verticalmeasure_measureunitcode', 
+            'verticalaccuracymeasure_measurevalue', 
+            'verticalaccuracymeasure_measureunitcode', 
+            'verticalcollectionmethodname', 
+            'verticalcoordinatereferencesystemdatumname', 
+            'countrycode', 
+            'statecode', 
+            'countycode', 
+            'aquifername', 
+            'formationtypetext', 
+            'aquifertypename', 
+            'constructiondatetext', 
+            'welldepthmeasure_measurevalue', 
+            'welldepthmeasure_measureunitcode', 
+            'wellholedepthmeasure_measurevalue', 
+            'wellholedepthmeasure_measureunitcode', 
+            'providername'
+        ]
 
 
 class ResultsSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Results
-        fields = ['characteristicname', 'resultmeasurevalue']
+        fields = [
+            'organizationidentifier',
+            'organizationformalname',
+            'activityidentifier',
+            'activitytypecode',
+            'activitymedianame',
+            'activitymediasubdivisionname',
+            'activitystartdate',
+            'activitystarttime_time',
+            'activitystarttime_timezonecode',
+            'activityenddate',
+            'activityendtime_time',
+            'activityendtime_timezonecode',
+            'activitydepthheightmeasure_measurevalue',
+            'activitydepthheightmeasure_measureunitcode',
+            'activitydepthaltitudereferencepointtext',
+            'activitytopdepthheightmeasure_measurevalue',
+            'activitytopdepthheightmeasure_measureunitcode',
+            'activitybottomdepthheightmeasure_measurevalue',
+            'activitybottomdepthheightmeasure_measureunitcode',
+            'projectidentifier',
+            'activityconductingorganizationtext',
+            'monitoringlocationidentifier',
+            'activitycommenttext',
+            'sampleaquifer',
+            'hydrologiccondition',
+            'hydrologicevent',
+            'samplecollectionmethod_methodidentifier',
+            'samplecollectionmethod_methodidentifiercontext',
+            'samplecollectionmethod_methodname',
+            'samplecollectionequipmentname',
+            'resultdetectionconditiontext',
+            'characteristicname',
+            'resultsamplefractiontext',
+            'resultmeasurevalue',
+            'resultmeasure_measureunitcode',
+            'measurequalifiercode',
+            'resultstatusidentifier',
+            'statisticalbasecode',
+            'resultvaluetypename',
+            'resultweightbasistext',
+            'resulttimebasistext',
+            'resulttemperaturebasistext',
+            'resultparticlesizebasistext',
+            'precisionvalue',
+            'resultcommenttext',
+            'usgspcode',
+            'resultdepthheightmeasure_measurevalue',
+            'resultdepthheightmeasure_measureunitcode',
+            'resultdepthaltitudereferencepointtext',
+            'subjecttaxonomicname',
+            'sampletissueanatomyname',
+            'resultanalyticalmethod_methodidentifier',
+            'resultanalyticalmethod_methodidentifiercontext',
+            'resultanalyticalmethod_methodname',
+            'methoddescriptiontext',
+            'laboratoryname',
+            'analysisstartdate',
+            'resultlaboratorycommenttext',
+            'detectionquantitationlimittypename',
+            'detectionquantitationlimitmeasure_measurevalue',
+            'detectionquantitationlimitmeasure_measureunitcode',
+            'preparationstartdate',
+            'providername'
+        ]
