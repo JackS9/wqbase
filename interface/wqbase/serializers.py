@@ -4,7 +4,7 @@ from .models import Stations, Results
 class StationsSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Stations
-        fields = [
+        fields = [  # Could have used '__all__'
             'organizationidentifier', 
             'organizationformalname', 
             'monitoringlocationidentifier', 
@@ -47,7 +47,7 @@ class StationsSerializer(serializers.HyperlinkedModelSerializer):
 class ResultsSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Results
-        fields = [
+        fields = [  # could have used '__all__'
             'organizationidentifier',
             'organizationformalname',
             'activityidentifier',
